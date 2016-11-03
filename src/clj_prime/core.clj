@@ -32,7 +32,10 @@
     (println   "|   " i  "   |   " (string/join "   |   " row) "   |")))
 
 (defn -main
-  "Prints the multiplication table"
+  "Prints the multiplication table of prime numbers if
+   first arg 'N' is a valid integer then we show the table with
+   the first Nth prime numbers, otherwise we only show the table using
+   the first 10 prime numbers."
   [& args]
   (let [prime-vec (if (and (seq args)
                            (re-matches #"^\d+$" (first args)))
