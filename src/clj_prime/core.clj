@@ -31,6 +31,9 @@
         (lazy-seq (build-prime-lazy-seq (remove #(= 0 (mod % (first s))) (rest s))))))
 
 (defn prime-seq
+  "Returns a seq of prime numbers default size 10,
+   if size is specified and is greater than 1500 we use the vector
+   approach otherwise we use the lazy-seq approach"
   ([]
    (prime-seq 10))
   ([size]
