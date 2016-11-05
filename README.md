@@ -15,7 +15,7 @@ If n is specified will be the number of primes used to create the multiplication
 
 
 ## Examples
-
+```bash
     $ java -jar clj-prime-0.1.0-standalone.jar 11
 
 |   *X*   |    2   |   3   |   5   |   7   |   11   |   13   |   17   |   19   |   23   |   29   |   31    |
@@ -30,7 +30,7 @@ If n is specified will be the number of primes used to create the multiplication
 |    23    |    46   |   69   |   115   |   161   |   253   |   299   |   391   |   437   |   529   |   667   |   713    |
 |    29    |    58   |   87   |   145   |   203   |   319   |   377   |   493   |   551   |   667   |   841   |   899    |
 |    31    |    62   |   93   |   155   |   217   |   341   |   403   |   527   |   589   |   713   |   899   |   961    |
-
+```
 ## License
 
 Copyright © 2016 
