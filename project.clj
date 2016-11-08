@@ -1,4 +1,4 @@
-(defproject clj-prime "0.1.0"
+(defproject clj-prime "0.1.1"
   :description "Clojure assessment"
   :url "https://github.com/roberto-robles/clj-prime"
   :license {:name "Eclipse Public License"
