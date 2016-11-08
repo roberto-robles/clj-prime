@@ -42,14 +42,21 @@
      (build-prime-vector size)
      (take size (build-prime-lazy-seq (iterate inc 2))))))
 
+(defn format-cell [length s]
+  (format (str "%" length "s|") s))
+
+(defn- pretty-number [row length]
+  (string/join "" (map (partial format-cell length) row)))
+
 (defn print-mult-table
   "Prints the multiplication table of numbers in a vector"
   [prime-vec]
   {:pre [(seq prime-vec)]}
-  (println "|   *X*   |   " (string/join "   |   " prime-vec) "   |")
-  (doseq [i prime-vec
-          :let [row (map #(* i %) prime-vec)]]
-    (println   "|   " i  "   |   " (string/join "   |   " row) "   |")))
+  (let [length (count (str (* (last prime-vec) (last prime-vec))))]
+    (println (string/join "" ["|" (format-cell length "X") (pretty-number prime-vec length)]))
+    (doseq [i prime-vec
+            :let [row (map #(* i %) prime-vec)]]
+      (println (string/join "" ["|" (format-cell length i) (pretty-number row length)])))))
 
 (defn -main
   "Prints the multiplication table of prime numbers if
